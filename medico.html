@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interfaz del Médico</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Enlace al archivo CSS -->
+</head>
+<body>
+    <h1>Interfaz del Médico</h1>
+    <div class="search-container">
+        <form class="search-form" id="search-form">
+            <input type="text" id="search" placeholder="Documento del Paciente" required> <!-- Cambio de texto aquí -->
+            <button type="submit">Buscar</button>
+        </form>
+    </div>
+    <div class="patient-info" id="patient-info">
+        <!-- Aquí se mostrará la información del paciente -->
+    </div>
+
+    <!-- Formulario para agregar datos del paciente -->
+    <div class="patient-data-form">
+        <h2>Agregar datos del paciente</h2>
+        <form id="patient-data-form">
+            <label for="antecedentesPersonales">Antecedentes personales:</label>
+            <textarea id="antecedentesPersonales" name="antecedentesPersonales" rows="4" cols="50"></textarea><br>
+            
+            <label for="antecedentesFamiliares">Antecedentes de enfermedades familiares:</label>
+            <textarea id="antecedentesFamiliares" name="antecedentesFamiliares" rows="4" cols="50"></textarea><br>
+
+
+             <!-- Campo para preguntar si es fumador -->
+             <label>¿Eres fumador?</label>
+             <label for="si">Sí</label>
+             <input type="radio" id="si" name="tabaco" value="si" onclick="toggleAnosFumando(true)">
+             
+             <input type="radio" id="no" name="tabaco" value="no" onclick="toggleAnosFumando(false)">
+             <label for="no">No</label>
+             <div id="anos-fumando" style="display: block;">
+                 <label for="anos">Desde cuándo:</label>
+                 <input type="text" id="anos" name="anos">
+             </div>
+             
+           <label  for="alergias">Alergias:</label>
+           <textarea id="alergias" name="alergias"  rows="4" cols="50"></textarea>><br>
+
+           <label for="tratamientosPrevios">Tratamientos:</label>
+           <textarea id="tratamientosPrevios" name="tratamientosPrevios" rows="4" cols="50"></textarea><br>
+           
+           <label for="fotoTipoDePiel">Fototipo de piel:</label>
+           <textarea  id="fotoTipoDePiel" name="fotoTipoDePiel"  rows="4" cols="50"></textarea><br>
+
+           <label for="escalaDeGlogau">Escala de Glogau:</label>
+           <textarea  id="escalaDeGlogau" name="escalaDeGlogau"  rows="4" cols="50"></textarea><br>
+
+           <label for="tipoDeArrugasPredominantes">Tipo de arrugas predominantes</label>
+           <select id="tipoDeArrugasPredominantes"  name="tipoDeArrugasPredominantes" required><option value="dinamica" required>Dinamica</option>
+           <option value="estatica" required>Estatica</option></select>
+
+          
+            <br>    
+            <label for="medicacionHabitual">Medicación habitual:</label>
+            <textarea id="medicacionHabitual" name="medicacionHabitual" rows="4" cols="50"></textarea><br>
+            
+            <label for="diagnostico">Diagnóstico:</label>
+            <textarea id="diagnostico" name="diagnostico" rows="4" cols="50"></textarea><br>
+        
+
+            <label for="tratamientoPropuesto">Tratamiento propuesto:</label>
+            <textarea id="tratamientoPropuesto" name="tratamientoPropuesto" rows="4" cols="50"></textarea><br>
+
+            <!-- Agregar campo para la evolución del paciente -->
+            <label for="evolucion">Evolución del Paciente:</label>
+            <textarea id="evolucion" name="evolucion" rows="4" cols="50"></textarea><br>
+
+            <!-- Agregar campo para cargar imagen antes del tratamiento -->
+            <label for="beforeImage">Imagen antes del tratamiento:</label>
+            <input type="file" id="beforeImage" accept="image/*" required><br>
+            
+            <!-- Agregar campo para cargar imagen después del tratamiento -->
+            <label for="afterImage">Imagen después del tratamiento:</label>
+            <input type="file" id="afterImage" accept="image/*" required><br>
+
+            <button type="submit">Guardar datos</button>
+        </form>
+    </div>
+
+    <!-- Script JavaScript (para futuras implementaciones) -->
+    <script src="js.js"></script>
+</body>
+</html>
+
+
+
+
+

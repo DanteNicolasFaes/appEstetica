@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recepcionista</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+
+    <button id="crearPaciente">Crear Paciente</button>
+    <form id="patient-form" style="display: none;">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required><br>
+        
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido" required><br>
+        
+        <label for="documento">Número de Documento:</label>
+        <input type="text" id="documento" name="documento" required><br>
+        
+        <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+        <input type="date" id="fechaNacimiento" name="fechaNacimiento" required><br>
+
+        <label for="nacionalidad">Nacionalidad:</label>
+        <input type="text" id="nacionalidad" name="nacionalidad" required><br>
+
+        <label for="genero">Género:</label>
+        <input type="text" id="genero" name="genero" required><br>
+        
+        <label for="estadoCivil">Estado Civil:</label>
+        <input type="text" name="estadoCivil" id="estadoCivil" required><br>
+
+        <label for="ocupacion">Ocupación:</label>
+        <input type="text" name="ocupacion" id="ocupacion" required><br>
+
+        <label for="domicilio">Domicilio:</label>
+        <input type="text" id="domicilio" name="domicilio" required><br>
+        
+        <label for="codigoPostal">Código Postal:</label>
+        <input type="text" id="codigoPostal" name="codigoPostal"required><br>
+
+        <label for="paisDeResidencia">País de residencia</label>
+        <input type="text" id="paisDeResidencia" name="paisDeResidencia"required><br>
+       
+        <label for="correo">Correo Electrónico:</label>
+        <input type="email" id="correo" name="correo" required><br>
+        
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" name="telefono" required><br>
+        
+        <label for="medicoCabecera">Teléfono del Médico de Cabecera:</label>
+        <input type="tel" id="medicoCabecera" name="medicoCabecera"><br>
+        
+        <label for="OsPrepaga">O.S o Prepaga:</label>
+        <input type="text" id="OsPrepaga" name="OsPrepaga" required><br>
+
+        <label for="planDeOsPrepaga">Plan de O.S o Prepaga:</label>
+        <input type="text" id="planDeOsPrepaga" name="planDeOsPrepaga"required><br>
+        
+        <label for="NumeroAfiliado">Número de Afiliado:</label>
+        <input type="number" id="NumeroAfiliado" name="NumeroAfiliado" required readonly><br>
+
+        <label for="comoLlegoANosotros">Como llego a nosotros:</label>
+        <input type="text" name="comoLlegoANosotros" id="comoLlegoANosotros"><br>
+
+        <label for="modoDeContacto">Modo de contacto:</label>
+        <select id="modoDeContacto" name="modoDeContacto" required>
+            <option value="mail">Mail</option>
+            <option value="whatsapp">WhatsApp</option>
+        </select><br>
+         
+    
+        <button type="submit">Registrar Paciente</button>
+        <button type="button" id="modify-data">Modificar datos</button>
+        
+    </form>
+    <div class="agenda-container">
+        <!-- Primer span para la lista deslizable de profesionales -->
+        <span class="agenda-section">
+            <h2>Profesionales</h2>
+            <ul>
+                <li>Profesional 1</li>
+                <li>Profesional 2</li>
+                <li>Profesional 3</li>
+                <!-- Agregar más profesionales según sea necesario -->
+            </ul>
+        </span>
+
+        <!-- Segundo span para la lista de especialidades -->
+        <span class="agenda-section">
+            <h2>Especialidad</h2>
+            <ul>
+                <li>Especialidad 1</li>
+                <li>Especialidad 2</li>
+                <li>Especialidad 3</li>
+                <!-- Agregar más especialidades según sea necesario -->
+            </ul>
+        </span>
+
+        <!-- Tercer span para el calendario -->
+        <span class="agenda-section">
+            <h2>Calendario</h2>
+            <div id="calendario">
+                <!-- Calendario con día, mes y año -->
+            </div>
+        </span>
+
+        <!-- Cuarto span para la lista de turnos disponibles -->
+        <span class="agenda-section">
+            <h2>Turnos Disponibles</h2>
+            <ul>
+                <li>08:00 - 08:20</li>
+                <li>08:20 - 08:40</li>
+                <li>08:40 - 09:00</li>
+                <!-- Agregar más turnos según sea necesario -->
+            </ul>
+        </span>
+    </div>
+    <div id="calendar"></div>
+<!-- Quinto span para la barra de búsqueda por DNI -->
+<span class="agenda-section">
+    <h2>Buscar por DNI</h2>
+    <input type="text" id="buscarPorDNI" placeholder="Ingrese DNI">
+    <button onclick="buscarPacientePorDNI()">Buscar</button>
+    <div id="patient-details"></div> <!-- Nuevo div para mostrar detalles del paciente -->
+</span>
+
+<!-- Sexto span para el botón de Comprobante de atención -->
+<span class="agenda-section">
+    <h2>Comprobante de Atención</h2>
+    <button id="comprobanteAtencion">Comprobante de atención</button>
+</span>
+
+    <script src="recepcionista.js"></script>
+    <script src="base_datos_medicos.js"></script>
+</body>
+</html>

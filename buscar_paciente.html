@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generar comprobante</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Contenido del comprobante -->
+    <h1>Comprobante de Atención</h1>
+
+    <!-- Barra de búsqueda por DNI -->
+    <h2>Buscar paciente por DNI</h2>
+    <input type="text" id="buscarPorDNI" placeholder="Ingrese DNI">
+    <button onclick="buscarPacientePorDNI()">Buscar</button>
+    <div id="patient-details">
+        <!-- Aquí se mostrarán los detalles del paciente -->
+    </div>
+
+    <!-- Formulario para el bono de consulta -->
+    <form id="bonoConsultaForm">
+        <!-- Aquí van los campos para el bono de consulta -->
+        <!-- Por ejemplo: -->
+         <!-- Contenedor para los detalles del paciente -->
+    <div id="patient-details">
+        <!-- Aquí se mostrarán los detalles del paciente -->
+    </div>
+        <label for="practicaRealizada">Práctica Realizada:</label>
+        <input type="text" id="practicaRealizada" name="practicaRealizada" required><br>
+        <label for="cantidad">Cantidad:</label>
+        <input type="number" id="cantidad" name="cantidad" min="1" value="1" required><br>
+        <label for="precio">Precio:</label>
+        <input type="text" id="precio" name="precio" required><br>
+        <label for="firmaPaciente">Firma del Paciente:</label>
+        <input type="text" id="firmaPaciente" name="firmaPaciente" required><br>
+        <button type="button" onclick="generarComprobante()">Generar Comprobante</button>
+        <button type="button" onclick="cerrarVentana()">Cerrar</button>
+    </form>
+
+    <script src="recepcionista.js"></script>
+    <script src="base_datos_medicos.js"></script>
+</body>
+</html>
